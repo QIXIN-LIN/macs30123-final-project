@@ -40,9 +40,64 @@ For data analysis, the collected data in RDA will be exported periodically, usin
 
 To enhance future data collection efforts and mitigate the risk of IP blocking, an IP rotation strategy is under consideration. This approach would involve dynamically changing the IP addresses used by our scrapers to avoid detection and blacklisting by job platforms. Implementing this strategy would allow us to move our scraping operations back to EC2, leveraging its continuous operation capabilities and thus ensuring more robust, uninterrupted data collection. This strategic shift would not only stabilize data acquisition but also expand our capacity to capture a broader dataset, enhancing the overall quality and scope of our market analysis.
 
-## Repo Guidance
+## Repository Guide and Project Walkthrough
 
-TBC
+### Overview
+
+This project is structured into multiple stages to efficiently handle data scraping, storage, analysis, and the development of a job recommendation system. Below, you will find detailed instructions on how to navigate and utilize the components and files within this repository.
+
+### Folder Structure
+
+1. **Step1_Scraper_RDS**
+2. **STEP2&3_Skill_LDA_Analysis&Job_Recommender**
+
+### Step 1: Scraper and RDS
+
+#### Location
+
+`Step1_Scraper_RDS` folder
+
+#### Contents
+
+- `main.ipynb`: Jupyter notebook containing the code to run the scraper and update the RDS database.
+- `some SkillNER files`: Required package for Named Entity Recognition (NER) to extract skills from job descriptions.
+- `template for logins.csv`: File to input login credentials for platforms to be scraped.
+
+#### Instructions
+
+1. **Prepare the Environment**:
+   - Navigate to the `Step1_Scraper_RDS` folder.
+   - Ensure that you have the `SkillNER` package installed. This package is crucial for processing and extracting skills from job descriptions using NER.
+2. **Configure Credentials**:
+   - Open `logins.csv` and add your login credentials for the platforms you intend to scrape. It is recommended to use a service account or a test account, rather than personal credentials, to avoid any potential security or privacy issues.
+3. **Run the Notebook**:
+   - Open `main.ipynb` in a Jupyter environment.
+   - Execute the cells in the notebook to start the scraping process and update the RDS database with the collected data.
+4. **Export Data to S3**:
+   - Once the data is updated in RDS, use the AWS Management Console to export a snapshot of the RDS database to an S3 bucket in Parquet format. This format is optimized for high-performance computing environments.
+
+### Step 2 & 3: Skill Analysis and Job Recommender
+
+#### Location
+
+`STEP2&3_Skill_LDA_Analysis&Job_Recommender` folder
+
+#### Contents
+
+- `2&3_local_setup.ipynb`: Jupyter notebook for setting up the EMR cluster.
+- `2&3_main.ipynb`: Main notebook to run on the AWS EMR Spark cluster for LDA analysis and job recommendation system.
+- Files existing in S3: Data files stored in S3, which are read directly in the main notebook.
+
+#### Instructions
+
+1. **EMR Cluster Setup**:
+   - Follow the instructions in `2&3_local_setup.ipynb` to configure and launch your AWS EMR cluster appropriately for the project's needs.
+2. **LDA Analysis and Recommender System**:
+   - Open `2&3_main.ipynb` on your AWS EMR Spark cluster.
+   - This notebook contains the logic for performing Latent Dirichlet Allocation (LDA) analysis on the skills extracted from job descriptions.
+   - It also includes the implementation of a simple job recommender system that matches job seekers with jobs based on the skills they input.
+3. **Data Management**:
+   - Ensure that all required data files are correctly placed in S3 and accessible from the EMR cluster. The main notebook should be able to read these files without issues.
 
 ## Analysis, Findings and Applications
 
