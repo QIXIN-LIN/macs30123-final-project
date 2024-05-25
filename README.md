@@ -24,7 +24,7 @@ The challenge of managing and analyzing large-scale, multi-dimensional datasets 
 
 ## Scalable Computing Methods Employed
 
-!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/workflow.png)
+![](https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/workflow.png)
 
 ### EC2 and Local Scraper
 
@@ -103,7 +103,7 @@ This project is structured into multiple stages to efficiently handle data scrap
 
 ## Analysis and Findings
 
-!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/wordcloud.png)
+![](https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/wordcloud.png)
 
 ### Integration of Soft and Technical Skills
 
@@ -129,7 +129,7 @@ This application is designed to help job seekers find positions that closely mat
 
 ### User Input
 
-!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/application_input_sample.png)
+![](https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/application_input_sample.png)
 
 - **Input Format**: Users input their skills as a comma-separated list. For example, "data analysis, Python, business analytics."
 - **Processing**: The input is processed to match the format expected by the underlying machine learning model, which is designed to parse and understand natural language inputs related to job skills.
@@ -142,7 +142,7 @@ This application is designed to help job seekers find positions that closely mat
 
 ### Output
 
-!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/application_output_sample.png)
+![](https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/application_output_sample.png)
 
 - **Top Job Recommendations**: The top five jobs, ranked by their relevance to the user's skills, are displayed. This output includes the job ID and a brief description of the job skills required, providing the user with clear and actionable information.
 
