@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project delves into the dynamics of today's job market, driven by rapid technological advancements and changing economic conditions. We aim to explore several pressing questions: What skills are currently necessary for employment? Why is it easier for some individuals to find jobs than others? Is there a mismatch between the skills that job seekers possess and what industries require?
+This project delves into the dynamics of today's job market, driven by rapid technological advancements and changing economic conditions. We aim to explore several pressing questions: **What skills are currently necessary for employment? Why is it easier for some individuals to find jobs than others? Is there a mismatch between the skills that job seekers possess and what industries require?**
 
 The modern job market landscape raises important questions about employment qualifications and accessibility. This research specifically targets the discrepancies between the skills held by job seekers and those demanded by industries. To address this, we will utilize Named Entity Recognition (NER) to extract the required skills from job descriptions systematically. Furthermore, we plan to develop a system that enables job seekers to find matching jobs based on their skills.
 
