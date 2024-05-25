@@ -48,8 +48,8 @@ This project is structured into multiple stages to efficiently handle data scrap
 
 ### Folder Structure
 
-1. **Step1_Scraper_RDS**
-2. **STEP2&3_Skill_LDA_Analysis&Job_Recommender**
+1. **[Step1_Scraper_RDS](https://github.com/macs30123-s24/final-project-42/tree/main/STEP1_Scraper_RDS)**
+2. **[STEP2&3_Skill_LDA_Analysis&Job_Recommender](https://github.com/macs30123-s24/final-project-42/tree/main/STEP2%263_Skill_LDA_Analysis%26Job_Recommender)**
 
 ### Step 1: Scraper and RDS
 
@@ -60,16 +60,16 @@ This project is structured into multiple stages to efficiently handle data scrap
 #### Contents
 
 - `main.ipynb`: Jupyter notebook containing the code to run the scraper and update the RDS database.
-- `some SkillNER files`: Required package for Named Entity Recognition (NER) to extract skills from job descriptions.
+- `some SkillNER files`: Required files for Named Entity Recognition (NER) to extract skills from job descriptions.
 - `template for logins.csv`: File to input login credentials for platforms to be scraped.
 
 #### Instructions
 
 1. **Prepare the Environment**:
    - Navigate to the `Step1_Scraper_RDS` folder.
-   - Ensure that you have the `SkillNER` package installed. This package is crucial for processing and extracting skills from job descriptions using NER.
+   - Ensure that you have follow the guidance on [Github - SkillNER by AnasAito](https://github.com/AnasAito/SkillNER) to install it correctly. This package is crucial for processing and extracting skills from job descriptions using NER.
 2. **Configure Credentials**:
-   - Open `logins.csv` and add your login credentials for the platforms you intend to scrape. It is recommended to use a service account or a test account, rather than personal credentials, to avoid any potential security or privacy issues.
+   - Open `template for logins.csv` and add your login credentials for Linkedin. It is recommended to use a test account, rather than personal credentials, to avoid any potential security or privacy issues.
 3. **Run the Notebook**:
    - Open `main.ipynb` in a Jupyter environment.
    - Execute the cells in the notebook to start the scraping process and update the RDS database with the collected data.
@@ -86,7 +86,7 @@ This project is structured into multiple stages to efficiently handle data scrap
 
 - `2&3_local_setup.ipynb`: Jupyter notebook for setting up the EMR cluster.
 - `2&3_main.ipynb`: Main notebook to run on the AWS EMR Spark cluster for LDA analysis and job recommendation system.
-- Files existing in S3: Data files stored in S3, which are read directly in the main notebook.
+- `ner_skills_sample.parquet & stopwords`: Data files used in the main notebook, also stored in S3 bucket.
 
 #### Instructions
 
@@ -113,22 +113,6 @@ The analysis also reveals distinct sector-specific trends:
 - **Healthcare**: Both clinical (nurses, patient care) and administrative (healthcare benefits management) skills are highlighted, pointing to a healthcare industry that is expanding in response to global health challenges and demographic changes. The emphasis on certifications and licensure indicates a highly regulated environment where continuing education and compliance are crucial.
 - **Construction and Engineering**: Skills related to project management and quality assurance in construction show the need for professionals who can oversee complex projects from conception through completion, ensuring they meet regulatory and safety standards.
 
-### Emphasis on Lifelong Learning and Adaptability
-
-The varied and evolving nature of the skills outlined in these topics suggests that lifelong learning and adaptability are becoming essential traits for professionals. As industries continue to evolve due to technological advancements and changing economic conditions, the ability to continuously learn new skills and adapt to new roles will be key to career longevity and success.
-
-### Regional and Global Differences
-
-While the analysis provides a broad overview, it's important to consider regional and global differences in skill demands. For instance, the importance of certain skills might be amplified in regions undergoing rapid industrial growth or technological adoption, whereas others may be more stable or declining in areas with different economic conditions.
-
-### Policy and Educational Implications
-
-These insights have significant implications for policy-makers and educational institutions. There is a clear need for curricula that are responsive to these changing demands, incorporating real-time industry needs into educational frameworks. Additionally, policies that support ongoing professional development and re-skilling can help workforce stay relevant and competitive.
-
-### Strategic Recruitment and Development
-
-For businesses, these insights can guide strategic recruitment and workforce development strategies. Understanding the specific skill sets that are in demand allows companies to better tailor their job descriptions, recruitment efforts, and employee training programs to attract and retain top talent.
-
 ### Technology Integration
 
 Lastly, the frequent mention of cloud technologies, data management, and cybersecurity across various topics highlights the ongoing shift towards an economy that is deeply integrated with technology. Companies and individuals alike need to prioritize the adoption and proficient use of these technologies to remain competitive and efficient.
@@ -154,36 +138,24 @@ This application is designed to help job seekers find positions that closely mat
 
 - **Top Job Recommendations**: The top five jobs, ranked by their relevance to the user's skills, are displayed. This output includes the job ID and a brief description of the job skills required, providing the user with clear and actionable information.
 
-### Example Use Case
-
-1. **User Input**: A user inputs their skills: "data analysis, Python, business analytics."
-2. **Processing**: The skills are processed and matched against the dataset.
-3. **Output**: The system outputs the top five jobs that require skills in data analysis, Python programming, and business analytics, ranked by the closeness of match.
-
 ### Integration with Job Databases
 
 The application can be integrated with real-time job databases to continuously update the job listings and ensure that the recommendations are up-to-date and relevant. This dynamic linkage allows the system to adapt to the ever-changing job market, providing current and prospective job seekers with valuable job matching opportunities.
 
-This recommender system is not only a tool for job seekers but also serves as a platform for employers to find potential candidates whose skills precisely match their needs, thereby streamlining the recruitment process and improving the quality of job matches.
-
 ## Credits and Acknowledgments
 
-This project has benefited from a variety of sources, expertise, and support, all of which have been instrumental in its development and success:
+### Data & Code Source
 
-### Data Source
-
-The data used in this project was sourced from the LinkedIn Job Postings dataset available on Kaggle. Special thanks to the dataset provider and the creator of the repository which can be found here:
+The sample data used in this project was sourced from the LinkedIn Job Postings dataset available on Kaggle. Special thanks to the dataset provider and the creator of the repository which can be found here:
 
 - **Dataset**: [LinkedIn Job Postings on Kaggle](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings/data)
 - **Repository**: [GitHub - LinkedIn Job Scraper by ArshKA](https://github.com/ArshKA/LinkedIn-Job-Scraper)
 
-### Technical Contributions
-
-In the **Step1_Scraper_RDS** folder, the original scraping code by ArshKA was significantly modified to integrate with AWS RDS and enhance its functionality by incorporating Skill NER (Named Entity Recognition). These adaptations were crucial for tailoring the scraper to the specific needs of this project, enabling more effective data collection and analysis.
+In the **Step1_Scraper_RDS** folder, the original scraping code by **ArshKA** was significantly modified to integrate with AWS RDS and enhance its functionality by incorporating Skill NER (Named Entity Recognition). These adaptations were crucial for tailoring the scraper to the specific needs of this project, enabling more effective data collection and analysis.
 
 ### Educational Support
 
-Profound gratitude is extended to **Professor Clindaniel** and the teaching assistants (TAs) who have provided continuous support throughout this project and the entire quarter. Their expert guidance, valuable instructions, and provided code notebooks have been essential not only in the successful completion of this project but also in enriching the overall learning experience in this course.
+Profound gratitude is extended to **Professor Clindaniel** and the teaching assistants (**Won Je Yun** and **Adam Wu**) who have provided continuous support throughout this project and the entire quarter. Their expert guidance, valuable instructions, and provided code notebooks have been essential not only in the successful completion of this project but also in enriching the overall learning experience in this course.
 
 ### Final Thoughts
 
