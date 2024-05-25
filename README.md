@@ -24,6 +24,8 @@ The challenge of managing and analyzing large-scale, multi-dimensional datasets 
 
 ## Scalable Computing Methods Employed
 
+!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/workflow.png)
+
 ### EC2 and Local Scraper
 
 Initially, the plan was to use Amazon EC2 (Elastic Compute Cloud) for its robust, always-online capabilities ideal for running a web scraper continuously. However, due to the risk of IP blocking by platforms such as LinkedIn, which has sophisticated systems to detect and prevent automated data extraction, we opted for a local scraping setup. Running the scraper locally minimizes the risk of detection and service interruption, ensuring a steady and consistent data flow. This hybrid approach allows for flexibility in data collection, maintaining the integrity and continuity of the scraping process while adhering to platform limitations and data usage policies.
@@ -101,6 +103,8 @@ This project is structured into multiple stages to efficiently handle data scrap
 
 ## Analysis and Findings
 
+!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/wordcloud.png)
+
 ### Integration of Soft and Technical Skills
 
 Across nearly all topics, there's a clear intersection between soft skills (like communication and management) and technical skills (such as data analysis, software development, and medical expertise). This blending underscores a labor market that increasingly values professionals who are not only technically proficient but also capable of leading teams, managing projects, and communicating effectively. Businesses and organizations are seeking individuals who can bridge the gap between technical execution and strategic management.
@@ -125,6 +129,8 @@ This application is designed to help job seekers find positions that closely mat
 
 ### User Input
 
+!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/application_input_sample.png)
+
 - **Input Format**: Users input their skills as a comma-separated list. For example, "data analysis, Python, business analytics."
 - **Processing**: The input is processed to match the format expected by the underlying machine learning model, which is designed to parse and understand natural language inputs related to job skills.
 
@@ -135,6 +141,8 @@ This application is designed to help job seekers find positions that closely mat
 - **Recommendation Algorithm**: The system applies a cosine similarity function to determine how closely the user's skills align with the skills required by various job postings. The jobs are then ranked based on this similarity score.
 
 ### Output
+
+!(https://github.com/macs30123-s24/final-project-42/blob/main/Visualization/application_output_sample.png)
 
 - **Top Job Recommendations**: The top five jobs, ranked by their relevance to the user's skills, are displayed. This output includes the job ID and a brief description of the job skills required, providing the user with clear and actionable information.
 
