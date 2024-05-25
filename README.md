@@ -99,10 +99,92 @@ This project is structured into multiple stages to efficiently handle data scrap
 3. **Data Management**:
    - Ensure that all required data files are correctly placed in S3 and accessible from the EMR cluster. The main notebook should be able to read these files without issues.
 
-## Analysis, Findings and Applications
+## Analysis and Findings
 
-TBC
+### Integration of Soft and Technical Skills
 
-## Credit
+Across nearly all topics, there's a clear intersection between soft skills (like communication and management) and technical skills (such as data analysis, software development, and medical expertise). This blending underscores a labor market that increasingly values professionals who are not only technically proficient but also capable of leading teams, managing projects, and communicating effectively. Businesses and organizations are seeking individuals who can bridge the gap between technical execution and strategic management.
 
-TBC
+### Sector-Specific Trends
+
+The analysis also reveals distinct sector-specific trends:
+
+- **Technology and IT**: There's an ongoing demand for skills in software development, cybersecurity, and data management, reflecting the sector's rapid growth and its critical role in digital transformation across industries.
+- **Healthcare**: Both clinical (nurses, patient care) and administrative (healthcare benefits management) skills are highlighted, pointing to a healthcare industry that is expanding in response to global health challenges and demographic changes. The emphasis on certifications and licensure indicates a highly regulated environment where continuing education and compliance are crucial.
+- **Construction and Engineering**: Skills related to project management and quality assurance in construction show the need for professionals who can oversee complex projects from conception through completion, ensuring they meet regulatory and safety standards.
+
+### Emphasis on Lifelong Learning and Adaptability
+
+The varied and evolving nature of the skills outlined in these topics suggests that lifelong learning and adaptability are becoming essential traits for professionals. As industries continue to evolve due to technological advancements and changing economic conditions, the ability to continuously learn new skills and adapt to new roles will be key to career longevity and success.
+
+### Regional and Global Differences
+
+While the analysis provides a broad overview, it's important to consider regional and global differences in skill demands. For instance, the importance of certain skills might be amplified in regions undergoing rapid industrial growth or technological adoption, whereas others may be more stable or declining in areas with different economic conditions.
+
+### Policy and Educational Implications
+
+These insights have significant implications for policy-makers and educational institutions. There is a clear need for curricula that are responsive to these changing demands, incorporating real-time industry needs into educational frameworks. Additionally, policies that support ongoing professional development and re-skilling can help workforce stay relevant and competitive.
+
+### Strategic Recruitment and Development
+
+For businesses, these insights can guide strategic recruitment and workforce development strategies. Understanding the specific skill sets that are in demand allows companies to better tailor their job descriptions, recruitment efforts, and employee training programs to attract and retain top talent.
+
+### Technology Integration
+
+Lastly, the frequent mention of cloud technologies, data management, and cybersecurity across various topics highlights the ongoing shift towards an economy that is deeply integrated with technology. Companies and individuals alike need to prioritize the adoption and proficient use of these technologies to remain competitive and efficient.
+
+These broader insights provide a multi-dimensional view of the labor market, helping stakeholders from across sectors to make informed decisions about career development, hiring, and policy-making.
+
+## Application: Job Recommender
+
+This application is designed to help job seekers find positions that closely match their skills. Users provide a list of their skills, and the system leverages a recommender algorithm to find and suggest the top five job postings that best fit their qualifications.
+
+### User Input
+
+- **Input Format**: Users input their skills as a comma-separated list. For example, "data analysis, Python, business analytics."
+- **Processing**: The input is processed to match the format expected by the underlying machine learning model, which is designed to parse and understand natural language inputs related to job skills.
+
+### Backend Processing
+
+- **Skill Extraction**: The application utilizes Named Entity Recognition (NER) to extract relevant skills from the user's input. This ensures that even if the input is slightly varied or contains synonyms, the system can accurately interpret and map the skills.
+- **Skill Matching**: Using a pre-calculated matrix of job skills (extracted and transformed into a TF-IDF (Term Frequency-Inverse Document Frequency) matrix from a dataset of job postings), the application computes the cosine similarity between the user's skills and each job's skill requirements.
+- **Recommendation Algorithm**: The system applies a cosine similarity function to determine how closely the user's skills align with the skills required by various job postings. The jobs are then ranked based on this similarity score.
+
+### Output
+
+- **Top Job Recommendations**: The top five jobs, ranked by their relevance to the user's skills, are displayed. This output includes the job ID and a brief description of the job skills required, providing the user with clear and actionable information.
+
+### Example Use Case
+
+1. **User Input**: A user inputs their skills: "data analysis, Python, business analytics."
+2. **Processing**: The skills are processed and matched against the dataset.
+3. **Output**: The system outputs the top five jobs that require skills in data analysis, Python programming, and business analytics, ranked by the closeness of match.
+
+### Integration with Job Databases
+
+The application can be integrated with real-time job databases to continuously update the job listings and ensure that the recommendations are up-to-date and relevant. This dynamic linkage allows the system to adapt to the ever-changing job market, providing current and prospective job seekers with valuable job matching opportunities.
+
+This recommender system is not only a tool for job seekers but also serves as a platform for employers to find potential candidates whose skills precisely match their needs, thereby streamlining the recruitment process and improving the quality of job matches.
+
+## Credits and Acknowledgments
+
+This project has benefited from a variety of sources, expertise, and support, all of which have been instrumental in its development and success:
+
+### Data Source
+
+The data used in this project was sourced from the LinkedIn Job Postings dataset available on Kaggle. Special thanks to the dataset provider and the creator of the repository which can be found here:
+
+- **Dataset**: [LinkedIn Job Postings on Kaggle](https://www.kaggle.com/datasets/arshkon/linkedin-job-postings/data)
+- **Repository**: [GitHub - LinkedIn Job Scraper by ArshKA](https://github.com/ArshKA/LinkedIn-Job-Scraper)
+
+### Technical Contributions
+
+In the **Step1_Scraper_RDS** folder, the original scraping code by ArshKA was significantly modified to integrate with AWS RDS and enhance its functionality by incorporating Skill NER (Named Entity Recognition). These adaptations were crucial for tailoring the scraper to the specific needs of this project, enabling more effective data collection and analysis.
+
+### Educational Support
+
+Profound gratitude is extended to **Professor Clindaniel** and the teaching assistants (TAs) who have provided continuous support throughout this project and the entire quarter. Their expert guidance, valuable instructions, and provided code notebooks have been essential not only in the successful completion of this project but also in enriching the overall learning experience in this course.
+
+### Final Thoughts
+
+The insights and skills gained from this project are attributed to the collaborative efforts of many, including the broader academic and online communities (special thanks to Reddit and Stack Overflow!). I'm deeply thankful to all who contributed directly or indirectly to my learning and project execution.
